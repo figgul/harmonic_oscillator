@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+  <title>osc test 2</title>
+  <link rel='stylesheet' href='osctest2.css'>
+</head>
+<body>
+  <div class="totaltestspace">
+    <div class="svgtestspace2">
+      <svg width="50" height="50">
+	    <!--real part-->
+	    <path d="M0,25 C12.5,25 12.5,0 25,25 S37.5,25 50,25" class="spindamnit_sm" style="stroke:#0000FF;stroke-width:1;fill:none;"/>
+	    <!--imaginary part-->
+	    <path d="M0,25 C12.5,25 12.5,50 25,25 S37.5,25 50,25" class="spindamnit2_sm" style="stroke:#00FFFF;stroke-width:1;fill:none;"/>
+      </svg>
+    </div>
+    <div class="svgtestspace">
+      <svg width="500" height="500">
+	    <!--real part-->
+	    <path d="M0,250 C125,250 125,0 250,250 S375,250 500,250" class="spindamnit" style="stroke:#0000FF;stroke-width:1;fill:none;"/>
+	    <!--imaginary part-->
+	    <path d="M0,250 C125,250 125,500 250,250 S375,250 500,250" class="spindamnit2" style="stroke:#00FFFF;stroke-width:1;fill:none;"/>
+      </svg>
+    </div>
+    <div class="svgtestspace2">
+      <svg width="50" height="50">
+	    <!--real part-->
+	    <path d="M0,25 C12.5,25 12.5,0 25,25 S37.5,25 50,25" class="spindamnit_sm" style="stroke:#0000FF;stroke-width:1;fill:none;"/>
+	    <!--imaginary part-->
+	    <path d="M0,25 C12.5,25 12.5,50 25,25 S37.5,25 50,25" class="spindamnit2_sm" style="stroke:#00FFFF;stroke-width:1;fill:none;"/>
+      </svg>
+    </div>
+    <div id="coloroptions">
+      <input class="options" id="color1" type="color" value="#FFF">
+	  <h1>Press H</h1>
+	  <input class="options" id="color2" type="color" value="#FFF">
+    </div>
+  </div>
+  <!--color chooser script-->
+  <script>
+    var color1;
+    var color2;
+    var defaultColor = "#0000FF";
+    var defaultColor2 = "#00FFFF";
+    window.addEventListener("load", startup, false);
+
+    function startup() {
+    color1 = document.querySelector("#color1");
+    color1.value = defaultColor;
+    color1.addEventListener("input", updateFirst, false);
+    color1.addEventListener("change", updateAll, false);
+    color1.select();
+    color2 = document.querySelector("#color2");
+    color2.value = defaultColor2;
+    color2.addEventListener("input", updateFirst2, false);
+    color2.addEventListener("change", updateAll2, false);
+    color2.select();
+    }
+	
+    function updateFirst(event) {
+    var path = document.querySelector(".spindamnit");
+	
+    if (path) {path.style.stroke = event.target.value;}
+    }
+
+    function updateAll(event) {
+    var path = document.querySelector(".spindamnit_sm");
+	
+    if (path) {path.style.stroke = event.target.value;}
+    }
+
+    function updateFirst2(event) {
+    var path2 = document.querySelector(".spindamnit2");
+	
+    if (path2) {path2.style.stroke = event.target.value;}	
+    }
+
+    function updateAll2(event) {
+    var path2 = document.querySelector(".spindamnit2_sm");
+
+    if (path2) {path2.style.stroke = event.target.value;}
+    }	
+  </script>
+  <!--UI hider script-->
+  <script>
+    document.addEventListener("keydown", function(){
+    var x=event.keyCode;
+    if(x==72) {
+      var y = document.getElementById("coloroptions");
+      if (y.style.display == "flex") {document.getElementById("coloroptions").style.display = "none";}
+      else {document.getElementById("coloroptions").style.display = "flex";}}
+    })  
+  </script>
+</body>
+</html>

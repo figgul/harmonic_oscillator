@@ -1,0 +1,61 @@
+body {background-color: #000; overflow: hidden;}
+
+.totaltestspace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.svgtestspace {
+  flex: 0 1 auto;
+  border: 1px solid #000051;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+   
+.svgtestspace2 {
+  flex: 0 1 auto;
+  border: 1px solid #000051;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+#coloroptions {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+}
+
+#coloroptions h1 {
+  color: #0000A2;
+  font: normal small-caps normal 1em Arial;
+  text-align: center;
+}
+
+.options {margin: auto;}
+
+.spindamnit {animation: vrotate 5s linear infinite;}
+.spindamnit2  {animation: vrotate 5s linear 0.5s infinite reverse;}
+.spindamnit_sm {animation: vrotate_sm 2s linear infinite;}
+.spindamnit2_sm  {animation: vrotate_sm 2s linear 0.25s infinite reverse;}
+
+@keyframes vrotate {
+  from {transform: rotateX(0deg); transform-origin: 250px 250px;}
+  to {transform: rotateX(360deg); transform-origin: 250px 250px;}
+}
+
+@keyframes vrotate_sm {
+  from {transform: rotateX(0deg); transform-origin: 25px 25px;}
+  to {transform: rotateX(360deg); transform-origin: 25px 25px;}
+}
