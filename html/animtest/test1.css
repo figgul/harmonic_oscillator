@@ -38,8 +38,13 @@ nav ul {
 nav li {display: inline-block;}
 
 .nav-logo {}
-.nav-logo:hover {}
-.nav-logo:active {filter: invert(1);}
+.nav-logo:hover {animation: hue-rotation 2s ease-in infinite alternate;}
+.nav-logo:active {animation: hue-rotation 1s ease-in infinite alternate;}
+
+@keyframes hue-rotation {
+  from {filter: hue-rotate(0deg);}
+  to {filter: hue-rotate(320deg);}
+}
 
 main {}
 
@@ -58,13 +63,7 @@ main {}
   flex: 0 1 auto;
 }
 
-.unbound-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.frame {
+.unbound-panel /*.frame*/{
   position: absolute;
   top: 0;
   left: 0;

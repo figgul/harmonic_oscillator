@@ -1,0 +1,18 @@
+ANIM CONTROLLER PSEUDOCODE
+(linear, unweighted, starting point)
+
+html
+1. panel containing img with animation ID
+2. src is first keyframe
+
+
+js
+1. create empty img array
+2. find set of imgs, load them into array
+	2A. find with SUPERSWEEPER
+	2B. find manually
+
+3. create animation controller class(?)
+4. gets array, gets ID of the panel to be modified
+5. iterate src source path, updating every x frames (or milliseconds?)
+6. loop when it reaches the end
