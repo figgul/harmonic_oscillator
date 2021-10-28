@@ -12,13 +12,29 @@
 </head>
 <body>
   <header>
-    <nav class="page-nav">
-      <ul>
-        <li class="flex"><a class="nav-icon-1" href="test1.html"><img src="assets/s1.png" style="width:30px; height:30px;"></a></li>
-	    <li class="no-flex"><a class="nav-logo" href="index.html"><img src="assets/logo1.png" style="width:50px; height:50px;"></a></li>
-		<li class="flex"><a class="nav-icon-2" href="birdbook.html"><img src="assets/s2.png" style="width:30px; height:30px;"></a></li>
-      </ul>
-    </nav>
+    <nav class="page-nav noselect">
+        <ul>
+		  <li>
+		    <a class="nav-icon" href="test1.html">
+			  <svg width="30" height="30">
+                <polygon points="" fill="none" stroke="#00FFFF" stroke-width="1">
+                <animate attributeName="points" values="15,5 25,25 5,25; 5,25 15,5 25,25" dur="0.5s" repeatCount="indefinite">
+                </polygon>
+              </svg>
+			</a>
+		  </li>
+  	      <li><a class="nav-logo" href="index.html"><img src="assets/logo1.png" style="width:50px; height:50px;"></a></li>
+		  <li>
+		    <a class="nav-icon" href="birdbook.html">
+			  <svg width="30" height="30">
+                <polygon points="" fill="none" stroke="#00FFFF" stroke-width="1">
+                <animate attributeName="points" values="15,5 25,25 5,25; 20,10 0,10 10,30; 15,5 25,25 5,25;" dur="1s" repeatCount="indefinite">
+                </polygon>
+              </svg>
+			</a>
+		  </li>
+        </ul>
+      </nav>
   </header>
   <main class="page-container">
 	<article id="page_01" class="page">

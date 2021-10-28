@@ -32,21 +32,13 @@ body {
 .nav-logo:hover {animation: hue-rotation 1.5s ease-in infinite alternate;}
 .nav-logo:active {animation: hue-rotation 1s ease-in infinite alternate;}
 
-.nav-icon-1 {
+.nav-icon {
   display: block;
-  text-align: right;
-  opacity: 80%;
+  opacity: 50%;
 }
 
-.nav-icon-2 {
-  display: block;
-  opacity: 80%;
-}
-
-.nav-icon-1:hover {opacity: 100%;}
-.nav-icon-1:active {filter: none;}
-.nav-icon-2:hover {opacity: 100%;}
-.nav-icon-2:active {filter: none;}
+.nav-icon:hover {opacity: 100%;}
+.nav-icon:active {filter: none;}
 
 @keyframes hue-rotation {
   from {filter: hue-rotate(0deg);}
