@@ -1,18 +1,38 @@
 ANIM CONTROLLER PSEUDOCODE
-(linear, unweighted, starting point)
+(SUPERSWEEPER, STATE MACHINE)
+(total guesswork)
 
-html
-1. panel containing img with animation ID
-2. src is first keyframe
+SUPER SWEEPER (js)
+1. pass it an initial folder to sweep. in this case testsite/assets/birdbook
+2. create total page arrays
+	2A. array includes everything starting with testsite/assets/birdbook/page_01... and so on
+3. create anim arrays
+	3A. sweep down to frame level. testsite/assets/birdbook/page_01_panel_00_frame_00 and so on
+	3B. if a frame_01 is found, create an array to include everything that pairs (page_01_panel_00_frame_XX) (?)
+
+(do i need to automatically create vars for what's swept?)
+(can i include arrays in arrays?)
+
+now there should be arrays like
+
+total_page_00 [page_00_panel_00_frame_00, page_00_panel_01_frame_00, page_00_panel_02_anim]	(?)	(or...)
+total_page_01 [page_01_panel_00_frame_00, page_01_panel_01_frame_00, page_01_panel_01_frame_01, etc]
+
+page_00_panel_02_anim [page_00_panel_02_frame_00, page_00_panel_02_frame_01, page_00_panel_02_frame_02, etc]
+page_01_panel_01_anim [page_01_panel_01_frame_00, page_01_panel_01_frame_01, etc]
+page_01_panel_02_anim [page_01_panel_02_frame_00, page_01_panel_02_frame_01, etc]
+
+4. animStruct {constructor(img_id, frames, update_freq)}
+5. manually (?) create vars for each img_id in the html
+6. anim arrays should be paired to vars with frame arrays respective to ids
+7. further pairings of frequency ints respective to ids
+
+8. anim vars to create instances of animStruct
+9. setInterval to updateAnim (linear frame animator) using each animStruct and their respective update frequency
 
 
-js
-1. create empty img array
-2. find set of imgs, load them into array
-	2A. find with SUPERSWEEPER
-	2B. find manually
-
-3. create animation controller class(?)
-4. gets array, gets ID of the panel to be modified
-5. iterate src source path, updating every x frames (or milliseconds?)
-6. loop when it reaches the end
+STATE MACHINE(js)
+1. probably do the former step 8 but differently
+	1A. anim vars with SPECIAL ANIMSTRUCT or animStruct with SPECIAL VARIABLES
+	1B. setInterval using whatever the fuck that'll be, probably in a SPECIAL UPDATEANIM!!!!!!!!!!!!!!
+2. 
