@@ -31,7 +31,7 @@ body {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 5px 0 0;
+  padding: 0.25rem 0 0;
   background: linear-gradient(180deg, rgba(0, 102, 255, 0.2), rgba(0, 0, 255, 0.1) 50%, rgba(0, 0, 255, 0));
   z-index: 1;
 }
@@ -55,10 +55,68 @@ body {
 .nav-icon:hover {opacity: 100%;}
 .nav-icon:active {filter: none;}
 
+#logo {width: 3.25rem; height: 3.25rem;}
+
 @keyframes hue-rotation {
   from {filter: hue-rotate(0deg);}
   to {filter: hue-rotate(320deg);}
 }
+
+.nav-icon-standard {display: initial;}
+.nav-icon-mobile {display: none;}
+
+.osc-sticker {
+  width: 100px;
+  height: 70px;
+  margin: 0 auto;
+  border: 1px solid #AA3090;
+}
+.osc-sticker h1 {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font: 0.5rem Source Code Pro;
+  border-bottom: 1px solid #AA3090;
+}
+
+.osc-sticker h2 {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font: small-caps 0.5rem Source Code Pro;
+  border-top: 1px solid #AA3090;
+}
+
+.osc-sticker div {height: 50px;}
+
+.osc-sticker-wide {
+  display: none;
+  width: 300px;
+  height: 70px;
+  margin: 0 auto;
+  border: 1px solid #AA3090;
+}
+.osc-sticker-wide h1 {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font: 0.5rem Source Code Pro;
+  border-bottom: 1px solid #AA3090;
+}
+
+.osc-sticker-wide h2 {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font: small-caps 0.5rem Source Code Pro;
+  border-top: 1px solid #AA3090;
+}
+
+.osc-sticker-wide div {height: 50px;}
 
 .flex-container {
   position: relative;
@@ -72,9 +130,97 @@ body {
 
 .flex-item {flex: 0 1 auto;}
 
+.nav-flex {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  padding: 1em 0 0;
+  width: 50%;
+  min-width: 25em;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  list-style-type: none;
+  gap: 2%;
+}
+
+.nav-flex-item {flex: 1 1 auto;}
+
+.nav-flex-item a {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.nav-flex-item a:link {color: #AA3090;}
+
+.nav-flex-item a:link .osc-sticker {border: 1px solid #AA3090;}
+.nav-flex-item a:link .osc-sticker h1 {border-bottom: 1px solid #AA3090;}
+.nav-flex-item a:link .osc-sticker h2 {border-top: 1px solid #AA3090;}
+.nav-flex-item a:link .osc-sticker-wide {border: 1px solid #AA3090;}
+.nav-flex-item a:link .osc-sticker-wide h1 {border-bottom: 1px solid #AA3090;}
+.nav-flex-item a:link .osc-sticker-wide h2 {border-top: 1px solid #AA3090;}
+.nav-flex-item a:link path {stroke: #AA3090;}
+
+.nav-flex-item a:visited {color: #AA3090;}
+
+.nav-flex-item a:visited .osc-sticker {border: 1px solid #AA3090;}
+.nav-flex-item a:visited .osc-sticker h1 {color: #AA3090; border-bottom: 1px solid #AA3090;}
+.nav-flex-item a:visited .osc-sticker h2 {color: #AA3090; border-top: 1px solid #AA3090;}
+.nav-flex-item a:visited .osc-sticker-wide {border: 1px solid #AA3090;}
+.nav-flex-item a:visited .osc-sticker-wide h1 {color: #AA3090; border-bottom: 1px solid #AA3090;}
+.nav-flex-item a:visited .osc-sticker-wide h2 {color: #AA3090; border-top: 1px solid #AA3090;}
+.nav-flex-item a:visited path {stroke: #AA3090;}
+
+.nav-flex-item a:hover {color: #800060;}
+
+.nav-flex-item a:hover .osc-sticker {border: 1px solid #600040;}
+.nav-flex-item a:hover .osc-sticker h1 {color: #800060; border-bottom: 1px solid #600040;}
+.nav-flex-item a:hover .osc-sticker h2 {color: #800060; border-top: 1px solid #600040;}
+.nav-flex-item a:hover .osc-sticker-wide {border: 1px solid #600040;}
+.nav-flex-item a:hover .osc-sticker-wide h1 {color: #800060; border-bottom: 1px solid #600040;}
+.nav-flex-item a:hover .osc-sticker-wide h2 {color: #800060; border-top: 1px solid #600040;}
+.nav-flex-item a:hover path {stroke: #400020;}
+
+.nav-flex-item a:active {color: #FFF;}
+
+.nav-flex-item a:active .osc-sticker {border: 1px solid #CCC;}
+.nav-flex-item a:active .osc-sticker h1 {color: #FFF; border-bottom: 1px solid #CCC;}
+.nav-flex-item a:active .osc-sticker h2 {color: #FFF; border-top: 1px solid #CCC;}
+.nav-flex-item a:active .osc-sticker-wide {border: 1px solid #CCC;}
+.nav-flex-item a:active .osc-sticker-wide h1 {color: #FFF; border-bottom: 1px solid #CCC;}
+.nav-flex-item a:active .osc-sticker-wide h2 {color: #FFF; border-top: 1px solid #CCC;}
+.nav-flex-item a:active path {stroke: #FFF;}
+
+.nav-flex-title {
+  font: 1rem Courier;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media all and (max-width: 640px) {
+  .main-nav ul {padding: 1em 0 0; justify-content: space-around;}
+  #logo {width: 75px; height: 75px;}
+  .nav-icon-standard {display: none;}
+  .nav-icon-mobile {display: initial;}
+  .osc-sticker {display: none;}
+  .osc-sticker-wide {display: block;}
+  .nav-flex {
+    padding: 1.25em 0 0;
+	width: 100%;
+	flex-flow: column nowrap;
+    align-items: stretch;
+  }
+  .nav-flex-item {}
+  .nav-flex-item a {padding: 2% 0;}
+}
+/*
 .main-titlespace {
   text-align: center;
   font-variant: small-caps;
+  border: 1px solid green;
 }
 
 .front-page h1 {
@@ -82,6 +228,7 @@ body {
   padding: 0;
   font: 4rem Source Code Pro;
   animation: slightGlow 2s cubic-bezier(.65,.17,.15,1.07) infinite alternate;
+  border: 1px dotted grey;
 }
 
 .front-page h1:last-of-type {margin: -4.5rem 0 0;}
@@ -96,30 +243,6 @@ body {
   font: italic 1.625rem Courier;
   text-transform: uppercase;
 }
-
-.osc-sticker {
-  width: 100px;
-  height: 70px;
-  margin: 0 auto;
-  border: 1px solid #AA3090;
-}
-.osc-sticker h1 {
-  height: 10px;
-  margin: 0;
-  padding: 0;
-  font: 0.5rem Source Code Pro;
-  border-bottom: 1px solid #AA3090;
-}
-
-.osc-sticker h2 {
-  height: 10px;
-  margin: 0;
-  padding: 0;
-  font: small-caps 0.5rem Source Code Pro;
-  border-top: 1px solid #AA3090;
-}
-
-.osc-sticker div {height: 50px;}
 
 @keyframes slightGlow {
   from {color: #AA3090;}
