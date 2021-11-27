@@ -120,18 +120,6 @@ body {
 
 .osc-sticker-wide div {height: 50px;}
 
-.flex-container {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 2%;
-}
-
-.flex-item {flex: 0 1 auto;}
-
 .nav-flex {
   position: relative;
   display: flex;
@@ -198,11 +186,16 @@ body {
 .nav-flex-item a:active path {stroke: #FFF;}
 .nav-flex-item a:active circle {fill: #222;}
 
-.nav-flex-title {
-  font: 1rem Courier;
-  text-align: center;
-  text-transform: uppercase;
+.flex-container {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
 }
+
+.flex-item {flex: 0 1 auto; animation: appear 1s cubic-bezier(.81,.16,.47,.96) 0s 1 normal;}
 
 .splash-flex-standard {
   position: relative;
@@ -249,26 +242,6 @@ body {
   to {opacity: 100%; margin: 0%;}
 }
 
-@media all and (max-width: 640px) {
-  .main-nav ul {padding: 1em 0 0; justify-content: space-around;}
-  #logo {width: 75px; height: 75px;}
-  .nav-icon-standard {display: none;}
-  .nav-icon-mobile {display: initial;}
-  .osc-sticker {display: none;}
-  .osc-sticker-wide {display: block;}
-  .nav-flex {
-    padding: 1.25em 0 0;
-	width: 100%;
-	flex-flow: column nowrap;
-    align-items: stretch;
-	gap: 2vh;
-  }
-  .nav-flex-item {}
-  .nav-flex-item a {padding: 2% 0;}
-  .splash-flex-standard {display: none;}
-  .splash-flex-mobile {display: flex;}
-}
-
 h3 {
   margin-bottom: 0.5em;
   text-align: center;
@@ -300,4 +273,30 @@ p {
   height: 2em;
   border: 1px solid #AA3090;
   background-color: #100510;
+}
+
+#wing1 {position: absolute;}
+#wing2 {position: absolute;}
+
+/*SMALL SCREENS WORLD*/
+@media all and (max-width: 640px) {
+  .main-nav ul {padding: 1em 0 0; justify-content: space-around;}
+  #logo {width: 75px; height: 75px;}
+  .nav-icon-standard {display: none;}
+  .nav-icon-mobile {display: initial;}
+  .osc-sticker {display: none;}
+  .osc-sticker-wide {display: block;}
+  .nav-flex {
+    padding: 1.25em 0 0;
+	width: 100%;
+	flex-flow: column nowrap;
+    align-items: stretch;
+	gap: 2vh;
+  }
+  .nav-flex-item {}
+  .nav-flex-item a {padding: 2% 0;}
+  .splash-flex-standard {display: none;}
+  .splash-flex-mobile {display: flex;}
+  .flex-container {gap: 1%;}
+  .tablet-of-truth {font-size: 0.75em;}
 }
