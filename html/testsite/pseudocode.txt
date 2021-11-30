@@ -1,38 +1,53 @@
-ANIM CONTROLLER PSEUDOCODE
-(SUPERSWEEPER, STATE MACHINE)
-(total guesswork)
+PSEUDOCODE
 
-SUPER SWEEPER (js)
-1. pass it an initial folder to sweep. in this case testsite/assets/birdbook
-2. create total page arrays
-	2A. array includes everything starting with testsite/assets/birdbook/page_01... and so on
-3. create anim arrays
-	3A. sweep down to frame level. testsite/assets/birdbook/page_01_panel_00_frame_00 and so on
-	3B. if a frame_01 is found, create an array to include everything that pairs (page_01_panel_00_frame_XX) (?)
+ANIMATION STATE-BASED CONTROLLER
 
-(do i need to automatically create vars for what's swept?)
-(can i include arrays in arrays?)
+** NOTE: CHANGE ALL REFERENCES TO NAMING CONVENTION WITH "_reference" **
+** NOTE: COMMENT CODE SUFFICIENTLY!! **
+** NOTE: RENAME NEXTSTATE!! **
 
-now there should be arrays like
+1. data.js
+	1.1. manually define all in-document img_id
+	1.2. manually define all frames
+	1.3. define arrays for sets of frames
+	1.4. define correlating animState IDs
+	1.5. (make all data static)
 
-total_page_00 [page_00_panel_00_frame_00, page_00_panel_01_frame_00, page_00_panel_02_anim]	(?)	(or...)
-total_page_01 [page_01_panel_00_frame_00, page_01_panel_01_frame_00, page_01_panel_01_frame_01, etc]
+2. link data.js to animcontroller.js
 
-page_00_panel_02_anim [page_00_panel_02_frame_00, page_00_panel_02_frame_01, page_00_panel_02_frame_02, etc]
-page_01_panel_01_anim [page_01_panel_01_frame_00, page_01_panel_01_frame_01, etc]
-page_01_panel_02_anim [page_01_panel_02_frame_00, page_01_panel_02_frame_01, etc]
+3. nextState	(class)
+	3.1. calls constructor requiring animState ID and a weight
+	3.2. generate instances of nextState
 
-4. animStruct {constructor(img_id, frames, update_freq)}
-5. manually (?) create vars for each img_id in the html
-6. anim arrays should be paired to vars with frame arrays respective to ids
-7. further pairings of frequency ints respective to ids
+4. exitProtocol	(array)
+	4.1. define multiple exitProtocol arrays for each animState
+	4.2. exitProtocol are populated with nextStates
+	
+5. animState	(class)
+	5.1. calls constructor requiring animState ID, frame set array, exitProtocol
 
-8. anim vars to create instances of animStruct
-9. setInterval to updateAnim (linear frame animator) using each animStruct and their respective update frequency
+6. animStruct	(class)
+	6.1. calls constructor requiring in-document img_ID and initial animState (sets current_state)
+	6.2. set current_frame to 0
+
+7. stateMachine	(class)
+	7.1. create function for determining new states
+	7.2. pass in animStruct
+	7.3. chooses a new state based on exitProtocol and Math.random()
+	7.4. after choosing a new state, update current_state for animStruct
+	
+8. updateAnim	(function)
+	8.1. pass in animStruct
+	8.2. uses current_state to update current frames
+	8.3. when current_state finishes, ask stateMachine for a new current_state
+	
+
+~ ~ ~
 
 
-STATE MACHINE(js)
-1. probably do the former step 8 but differently
-	1A. anim vars with SPECIAL ANIMSTRUCT or animStruct with SPECIAL VARIABLES
-	1B. setInterval using whatever the fuck that'll be, probably in a SPECIAL UPDATEANIM!!!!!!!!!!!!!!
-2. 
+[0,11]
+
+RIGHTWARDS BIRD! [0,2]	| RIGHTWARDS BIRD (0.7), LEFTWARDS TURN (0.3)	|
+LEFTWARDS TURN! [3,5]	| LEFTWARDS BIRD (1)							|
+LEFTWARDS BIRD! [6,8]	| LEFTWARDS BIRD (0.6), RIGHTWARDS TURN (0.4)	|
+RIGHTWARDS TURN! [9,11]	| RIGHTWARDS BIRD (1)							|

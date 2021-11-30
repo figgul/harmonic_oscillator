@@ -258,6 +258,9 @@ p {
 .tablet-of-truth {
   padding: 1.5em;
   width: 8em;
+  height: 34em;
+  text-align: justify;
+  text-align-last: justify;
   line-height: 1em;
   font-variant: small-caps;
   border: 1px solid #AA3090;
