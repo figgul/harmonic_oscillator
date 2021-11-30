@@ -51,16 +51,16 @@ body {
 .nav-logo:hover {animation: hue-rotation 1.5s ease-in infinite alternate;}
 .nav-logo:active {animation: hue-rotation 1s ease-in infinite alternate;}
 
-.nav-icon {opacity: 50%;}
-.nav-icon:hover {opacity: 100%;}
-.nav-icon:active polygon {stroke: #FFF;}
-
 #logo {width: 3.25rem; height: 3.25rem;}
 
 @keyframes hue-rotation {
   from {filter: hue-rotate(0deg);}
   to {filter: hue-rotate(320deg);}
 }
+
+.nav-icon {opacity: 50%;}
+.nav-icon:hover {opacity: 100%;}
+.nav-icon:active polygon {stroke: #FFF;}
 
 .nav-icon-standard {display: initial;}
 .nav-icon-mobile {display: none;}
@@ -195,7 +195,7 @@ body {
   gap: 2%;
 }
 
-.flex-item {flex: 0 1 auto; animation: appear 1s cubic-bezier(.81,.16,.47,.96) 0s 1 normal;}
+.flex-item {flex: 0 1 auto;}
 
 .splash-flex-standard {
   position: relative;
@@ -203,7 +203,7 @@ body {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin:5em 0;
+  margin: 5em 0;
   width: 100%;
   height: 20em;
 }
@@ -212,6 +212,7 @@ body {
   width: 50%;
   max-width: 540px;
 }
+
 #splash-flex-img-2-standard {
   position: absolute;
   left: 40vw;
@@ -231,6 +232,15 @@ body {
 }
 
 #splash-flex-img-1-mobile {
+  width: 100%;
+  /*name | duration | timing function | delay | iteration count | direction*/
+  animation: appear 2s cubic-bezier(.81,.16,.47,.96) 0s 1 normal;
+}
+
+#splash-flex-img-2-mobile {
+  position: absolute;
+  bottom: -5%;
+  left: 2%;
   width: 200px;
   height: 200px;
   /*name | duration | timing function | delay | iteration count | direction*/
@@ -240,12 +250,6 @@ body {
 @keyframes appear {
   from {opacity: 0%; margin: -5%;}
   to {opacity: 100%; margin: 0%;}
-}
-
-h3 {
-  margin-bottom: 0.5em;
-  text-align: center;
-  font-variant: small-caps;
 }
 
 p {
@@ -278,28 +282,10 @@ p {
   background-color: #100510;
 }
 
-#wing1 {position: absolute;}
-#wing2 {position: absolute;}
+.card {animation: appear 1s cubic-bezier(.81,.16,.47,.96) 0s 1 normal;}
 
-/*SMALL SCREENS WORLD*/
-@media all and (max-width: 640px) {
-  .main-nav ul {padding: 1em 0 0; justify-content: space-around;}
-  #logo {width: 75px; height: 75px;}
-  .nav-icon-standard {display: none;}
-  .nav-icon-mobile {display: initial;}
-  .osc-sticker {display: none;}
-  .osc-sticker-wide {display: block;}
-  .nav-flex {
-    padding: 1.25em 0 0;
-	width: 100%;
-	flex-flow: column nowrap;
-    align-items: stretch;
-	gap: 2vh;
-  }
-  .nav-flex-item {}
-  .nav-flex-item a {padding: 2% 0;}
-  .splash-flex-standard {display: none;}
-  .splash-flex-mobile {display: flex;}
-  .flex-container {gap: 1%;}
-  .tablet-of-truth {font-size: 0.75em;}
+.card-title {
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-variant: small-caps;
 }
