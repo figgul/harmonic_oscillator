@@ -211,6 +211,7 @@ body {
 #splash-flex-img-1-standard {
   width: 50%;
   max-width: 540px;
+  z-index: 1;
 }
 
 #splash-flex-img-2-standard {
@@ -219,6 +220,7 @@ body {
   width: 50%;
   max-width: 540px;
   max-height: 540px;
+  z-index: 2;
 }
 
 .splash-flex-mobile {
