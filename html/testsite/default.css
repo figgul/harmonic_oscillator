@@ -254,6 +254,11 @@ body {
   to {opacity: 100%; margin: 0%;}
 }
 
+@keyframes slight-appear {
+  from {opacity: 2%;}
+  to {opacity: 20%;}
+}
+
 p {
   padding: 0 10%;
   text-align: justify;
